@@ -14,11 +14,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-gray-50 min-h-screen font-sans">
-        <Navigation />
-        <main className="max-w-7xl mx-auto py-6 px-4">
-          {children}
-        </main>
+      <body className="antialiased min-h-screen font-sans bg-gradient-to-br from-slate-900 via-slate-700 to-slate-400">
+        <div className="flex min-h-screen">
+          <Navigation />
+          <main className="flex-1 ml-64 p-8 bg-gradient-to-br from-slate-50/95 via-slate-100/90 to-slate-200/85 backdrop-blur-sm">
+            <div className="max-w-6xl mx-auto">
+              {children}
+            </div>
+          </main>
+        </div>
       </body>
     </html>
   );

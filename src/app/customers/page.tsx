@@ -46,17 +46,21 @@ export default function CustomersPage() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-900">Customers</h1>
+        <div>
+          <h1 className="text-4xl font-bold gradient-text mb-2">Customers</h1>
+          <p className="text-slate-600">Manage your customer relationships</p>
+        </div>
         <button
           onClick={() => setShowAddForm(true)}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-cyan-600 transition-all shadow-lg flex items-center gap-2"
         >
+          <span className="text-lg">+</span>
           Add Customer
         </button>
       </div>
 
-      <div className="bg-white p-4 rounded-lg shadow">
-        <div className="mb-4">
+      <div className="glass-card p-6 border border-slate-200/20">
+        <div className="mb-6">
           <input
             type="text"
             placeholder="Search customers..."
@@ -65,7 +69,7 @@ export default function CustomersPage() {
               setSearchTerm(e.target.value);
               setCurrentPage(1);
             }}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white/50 backdrop-blur-sm"
           />
         </div>
 
@@ -201,7 +205,7 @@ function CustomerForm({ customer, onSave, onCancel }: CustomerFormProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-slate-800 bg-opacity-25 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-6 w-full max-w-md">
         <h2 className="text-lg font-medium text-gray-900 mb-4">
           {customer ? 'Edit Customer' : 'Add Customer'}

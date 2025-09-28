@@ -16,108 +16,110 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-        <div className="text-sm text-gray-500">
-          Contour ERP System
+        <div>
+          <h1 className="text-4xl font-bold gradient-text mb-2">Dashboard</h1>
+          <p className="text-slate-600">Welcome to your ERP command center</p>
+        </div>
+        <div className="glass-card px-4 py-2">
+          <div className="text-sm text-slate-600">System Status</div>
+          <div className="flex items-center mt-1">
+            <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+            <span className="text-sm font-medium text-slate-700">All Systems Operational</span>
+          </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="glass-card p-6 hover:shadow-xl transition-all duration-300 border border-slate-200/20">
           <div className="flex items-center">
             <div className="flex-1">
-              <h2 className="text-sm font-medium text-gray-500">Total Customers</h2>
-              <p className="text-2xl font-bold text-gray-900">{stats.totalCustomers}</p>
+              <h2 className="text-sm font-medium text-slate-600">Total Customers</h2>
+              <p className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">{stats.totalCustomers}</p>
             </div>
-            <div className="text-blue-500">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg">
+              <span className="text-white text-xl">👥</span>
             </div>
           </div>
-          <Link href="/customers" className="text-blue-600 text-sm hover:underline mt-2 block">
+          <Link href="/customers" className="text-blue-600 text-sm hover:text-blue-800 font-medium mt-3 block transition-colors">
             View all customers →
           </Link>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="glass-card p-6 hover:shadow-xl transition-all duration-300 border border-slate-200/20">
           <div className="flex items-center">
             <div className="flex-1">
-              <h2 className="text-sm font-medium text-gray-500">Inventory Items</h2>
-              <p className="text-2xl font-bold text-gray-900">{stats.totalInventoryItems}</p>
+              <h2 className="text-sm font-medium text-slate-600">Inventory Items</h2>
+              <p className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">{stats.totalInventoryItems}</p>
             </div>
-            <div className="text-green-500">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"/>
-              </svg>
+            <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center shadow-lg">
+              <span className="text-white text-xl">📦</span>
             </div>
           </div>
-          <div className="text-sm text-red-600 mt-1">
+          <div className="text-sm text-red-600 mt-1 font-medium">
             {stats.lowStockItems} items low stock
           </div>
-          <Link href="/inventory" className="text-blue-600 text-sm hover:underline mt-2 block">
+          <Link href="/inventory" className="text-green-600 text-sm hover:text-green-800 font-medium mt-2 block transition-colors">
             Manage inventory →
           </Link>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="glass-card p-6 hover:shadow-xl transition-all duration-300 border border-slate-200/20">
           <div className="flex items-center">
             <div className="flex-1">
-              <h2 className="text-sm font-medium text-gray-500">Work Orders</h2>
-              <p className="text-2xl font-bold text-gray-900">{stats.totalWorkOrders}</p>
+              <h2 className="text-sm font-medium text-slate-600">Work Orders</h2>
+              <p className="text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-500 bg-clip-text text-transparent">{stats.totalWorkOrders}</p>
             </div>
-            <div className="text-yellow-500">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"/>
-              </svg>
+            <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-400 rounded-xl flex items-center justify-center shadow-lg">
+              <span className="text-white text-xl">⚙️</span>
             </div>
           </div>
-          <div className="text-sm mt-1">
-            <span className="text-red-600">{stats.pendingWorkOrders} pending</span> •
-            <span className="text-yellow-600 ml-1">{stats.inProgressWorkOrders} active</span> •
-            <span className="text-green-600 ml-1">{stats.completedWorkOrders} complete</span>
+          <div className="text-sm mt-2 flex flex-wrap gap-1">
+            <span className="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-medium">{stats.pendingWorkOrders} pending</span>
+            <span className="bg-amber-100 text-amber-700 px-2 py-1 rounded-full text-xs font-medium">{stats.inProgressWorkOrders} active</span>
+            <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium">{stats.completedWorkOrders} complete</span>
           </div>
-          <Link href="/work-orders" className="text-blue-600 text-sm hover:underline mt-2 block">
+          <Link href="/work-orders" className="text-amber-600 text-sm hover:text-amber-800 font-medium mt-3 block transition-colors">
             View work orders →
           </Link>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="glass-card p-6 hover:shadow-xl transition-all duration-300 border border-slate-200/20">
           <div className="flex items-center">
             <div className="flex-1">
-              <h2 className="text-sm font-medium text-gray-500">Stations</h2>
-              <p className="text-2xl font-bold text-gray-900">{stats.totalStations}</p>
+              <h2 className="text-sm font-medium text-slate-600">Stations</h2>
+              <p className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent">{stats.totalStations}</p>
             </div>
-            <div className="text-purple-500">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"/>
-              </svg>
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-400 rounded-xl flex items-center justify-center shadow-lg">
+              <span className="text-white text-xl">🏭</span>
             </div>
           </div>
-          <Link href="/stations" className="text-blue-600 text-sm hover:underline mt-2 block">
+          <Link href="/stations" className="text-purple-600 text-sm hover:text-purple-800 font-medium mt-3 block transition-colors">
             Manage stations →
           </Link>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-medium text-gray-900 mb-4">Recent Work Orders</h3>
-          <div className="space-y-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="glass-card p-6 border border-slate-200/20">
+          <h3 className="text-xl font-semibold text-slate-800 mb-6 flex items-center">
+            <span className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mr-3"></span>
+            Recent Work Orders
+          </h3>
+          <div className="space-y-4">
             {workOrders.slice(0, 5).map(wo => (
-              <div key={wo.id} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
+              <div key={wo.id} className="flex justify-between items-center p-3 rounded-lg bg-white/50 border border-slate-100 hover:bg-white/70 transition-colors">
                 <div>
-                  <Link href={`/work-orders/details?id=${wo.id}`} className="font-medium text-blue-600 hover:underline">
+                  <Link href={`/work-orders/details?id=${wo.id}`} className="font-semibold text-slate-800 hover:text-blue-600 transition-colors">
                     {wo.id}
                   </Link>
-                  <p className="text-sm text-gray-500">{wo.currentStatus}</p>
+                  <p className="text-sm text-slate-600 mt-1">{wo.currentStatus}</p>
                 </div>
-                <span className={`px-2 py-1 text-xs rounded-full ${
-                  wo.stage === 'complete' ? 'bg-green-100 text-green-800' :
-                  wo.stage === 'in_progress' ? 'bg-yellow-100 text-yellow-800' :
-                  'bg-gray-100 text-gray-800'
+                <span className={`px-3 py-1 text-xs font-medium rounded-full ${
+                  wo.stage === 'complete' ? 'bg-green-100 text-green-800 border border-green-200' :
+                  wo.stage === 'in_progress' ? 'bg-amber-100 text-amber-800 border border-amber-200' :
+                  'bg-slate-100 text-slate-800 border border-slate-200'
                 }`}>
                   {wo.stage.replace('_', ' ')}
                 </span>
@@ -126,18 +128,24 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-medium text-gray-900 mb-4">Low Stock Alert</h3>
-          <div className="space-y-3">
+        <div className="glass-card p-6 border border-slate-200/20">
+          <h3 className="text-xl font-semibold text-slate-800 mb-6 flex items-center">
+            <span className="w-2 h-2 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mr-3"></span>
+            Low Stock Alert
+          </h3>
+          <div className="space-y-4">
             {inventory.filter(item => item.quantity < 100).slice(0, 5).map(item => (
-              <div key={item.id} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
+              <div key={item.id} className="flex justify-between items-center p-3 rounded-lg bg-white/50 border border-slate-100 hover:bg-white/70 transition-colors">
                 <div>
-                  <p className="font-medium text-gray-900">{item.description}</p>
-                  <p className="text-sm text-gray-500">{item.partId}</p>
+                  <p className="font-semibold text-slate-800">{item.description}</p>
+                  <p className="text-sm text-slate-600 mt-1">{item.partId}</p>
                 </div>
-                <span className="text-red-600 font-medium">
-                  {item.quantity} {item.unitOfMeasurement}
-                </span>
+                <div className="text-right">
+                  <span className="text-red-600 font-bold text-lg">
+                    {item.quantity}
+                  </span>
+                  <p className="text-xs text-slate-500">{item.unitOfMeasurement}</p>
+                </div>
               </div>
             ))}
           </div>
