@@ -1,36 +1,193 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contour ERP - Enterprise Resource Planning System
 
-## Getting Started
+A comprehensive ERP prototype built with Next.js and TypeScript, featuring customer management, inventory tracking, work order management, and station operations.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Dashboard
+- Overview of total customers, inventory items, work orders, and stations
+- Real-time statistics and status indicators
+- Recent work orders and low stock alerts
+- Quick navigation to all modules
+
+### Customer Management
+- Complete customer database with business information
+- Pagination and search functionality
+- CRUD operations (Create, Read, Update, Delete)
+- Customer details include business name, address, contact information, and invoice history
+
+### Inventory Management
+- Comprehensive inventory tracking with detailed metadata
+- Low stock alerts and quantity management
+- Sortable columns and search functionality
+- Quantity adjustment with reason tracking and confirmation dialogs
+- Part information includes ID, description, pricing, and supplier details
+
+### Work Order Management
+- Complete work order lifecycle management
+- Print functionality for work order details
+- Status tracking and stage management
+- Integration with customer and inventory data
+- Work order templates and routing
+
+### Work Order Details
+- Detailed view of individual work orders
+- Editable fields with status-based visibility
+- Parts usage tracking
+- Station routing and operations tracking
+- Comments and financial information
+
+### Station Management
+- Manufacturing station configuration
+- Consumable materials tracking
+- Station-based operations management
+
+## 🛠️ Technology Stack
+
+- **Frontend Framework**: Next.js 15.5.4
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: React Hooks
+- **Deployment**: GitHub Pages (Static Export)
+
+## 📊 Sample Data
+
+The application comes pre-populated with:
+- 120+ fake customers with realistic business data
+- 150+ inventory items across various categories
+- 130+ work orders in different stages
+- 10 manufacturing stations with consumables
+
+## 🏗️ Project Structure
+
+```
+src/
+├── app/                  # Next.js app router pages
+│   ├── customers/        # Customer management
+│   ├── inventory/        # Inventory management
+│   ├── work-orders/      # Work order management
+│   └── stations/         # Station management
+├── components/           # Reusable UI components
+├── data/                 # Mock data generation
+├── types/                # TypeScript type definitions
+└── lib/                  # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/contour-erp.git
+cd contour-erp
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Deploy on Vercel
+### Building for Production
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This creates an optimized static export in the `out/` directory suitable for GitHub Pages deployment.
+
+## 📋 Features Overview
+
+### Customer View
+- ✅ Editable customer list with pagination
+- ✅ Customer metadata (business name, address, contact, etc.)
+- ✅ Delete functionality with confirmation
+- ✅ Add new customers manually
+- ✅ Search and filter capabilities
+
+### Inventory View
+- ✅ Editable inventory list with sorting
+- ✅ Quantity management with reason tracking
+- ✅ Low stock alerts and status indicators
+- ✅ Comprehensive part information
+- ✅ Supplier and pricing data
+
+### Work Order Management
+- ✅ Work order listing with filtering
+- ✅ Print functionality for detailed work orders
+- ✅ Status and stage tracking
+- ✅ Customer integration
+- ✅ Create new work orders
+
+### Work Order Details
+- ✅ Comprehensive work order view
+- ✅ Status-based field visibility
+- ✅ Parts usage tracking
+- ✅ Station routing information
+- ✅ Editable work order data
+
+### Station Management
+- ✅ Station listing and management
+- ✅ Consumable materials tracking
+- ✅ Add/edit/delete operations
+
+## 🎨 Design Features
+
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Modern UI**: Clean, professional interface using Tailwind CSS
+- **Interactive Elements**: Hover effects, transitions, and status indicators
+- **Data Visualization**: Color-coded status indicators and progress tracking
+- **User Experience**: Intuitive navigation and confirmation dialogs
+
+## 📈 Deployment
+
+The application is configured for automatic deployment to GitHub Pages using GitHub Actions. Every push to the main branch triggers a build and deployment.
+
+### Manual Deployment
+
+1. Build the application:
+```bash
+npm run build
+```
+
+2. Deploy the `out/` directory to your hosting provider
+
+## 🤝 Contributing
+
+This is a prototype application. Feel free to fork and customize for your needs.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🔧 Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Create production build
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+### Key Components
+
+- **Navigation**: Responsive navigation bar with active state indicators
+- **Dashboard Cards**: Statistical overview with interactive elements
+- **Data Tables**: Sortable, searchable tables with pagination
+- **Modal Forms**: Clean form interfaces for data entry
+- **Status Indicators**: Color-coded badges for different states
+
+---
+
+Built with ❤️ using Next.js and TypeScript
